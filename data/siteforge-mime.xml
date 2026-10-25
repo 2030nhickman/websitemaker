@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-siteforge">
+    <comment>SiteForge project</comment>
+    <sub-class-of type="application/json"/>
+    <generic-icon name="text-html"/>
+    <glob pattern="*.siteforge"/>
+  </mime-type>
+</mime-info>

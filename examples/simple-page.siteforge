@@ -1,0 +1,165 @@
+{
+  "format": "siteforge",
+  "version": 1,
+  "title": "Bakery on Main",
+  "lang": "en",
+  "html": "<header data-sf-id=\"sf-1\" id=\"header1\" class=\"hero\">\n  <h1>Bakery on Main</h1>\n  <p>Fresh bread every morning since 1998.</p>\n</header>\n<img data-sf-id=\"sf-12\" id=\"image1\" src=\"assets/bakery.png\" alt=\"Loaf of bread on a board\" width=\"320\" height=\"200\">\n<h2 data-sf-id=\"sf-2\" id=\"text1\">Opening hours</h2>\n<p data-sf-id=\"sf-3\" id=\"text2\">Monday to Saturday, 7:00 – 18:00. Closed on Sundays.</p>\n<h2 data-sf-id=\"sf-4\" id=\"text3\">Find us</h2>\n<iframe data-sf-id=\"sf-5\" id=\"frame1\" src=\"https://www.openstreetmap.org/export/embed.html?bbox=-0.13,51.50,-0.12,51.51\" title=\"Map of the bakery\" width=\"480\" height=\"300\" sandbox=\"allow-scripts allow-same-origin\"></iframe>\n<h2 data-sf-id=\"sf-6\" id=\"text4\">Pre-order a cake</h2>\n<input type=\"text\" data-sf-id=\"sf-7\" id=\"input1\" name=\"name\" placeholder=\"Your name\" aria-label=\"Your name\">\n<textarea data-sf-id=\"sf-8\" id=\"input2\" name=\"order\" placeholder=\"Which cake, and when?\" aria-label=\"Order details\" rows=\"4\"></textarea>\n<button type=\"button\" data-sf-id=\"sf-9\" id=\"button1\" class=\"primary\" onclick=\"sendOrder()\">Send order</button>\n<p data-sf-id=\"sf-10\" id=\"text5\" class=\"note\"></p>\n<footer data-sf-id=\"sf-11\" id=\"footer1\"><p>&copy; 2026 Bakery on Main · 12 Main Street</p></footer>\n",
+  "css": "body {\n  font-family: Georgia, serif;\n  margin: 0 auto;\n  max-width: 760px;\n  padding: 0 24px 24px;\n  color: #3d2b1f;\n  background: #fffaf3;\n}\n\n.hero {\n  text-align: center;\n  padding: 48px 16px;\n  margin: 0 -24px 24px;\n  background: linear-gradient(135deg, #f6d5a8, #e8a87c);\n}\n\n.hero h1 {\n  margin: 0;\n  font-size: 2.6em;\n}\n\ninput, textarea {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  margin: 8px 0;\n  padding: 10px;\n  border: 1px solid #d9c3a5;\n  border-radius: 8px;\n  font: inherit;\n}\n\nbutton.primary {\n  background: #8b4513;\n  color: white;\n  border: 0;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font: inherit;\n  cursor: pointer;\n}\n\nimg, iframe {\n  max-width: 100%;\n  border: 0;\n  border-radius: 12px;\n}\n\nfooter {\n  margin-top: 48px;\n  border-top: 1px solid #e6d5bf;\n  color: #7a6250;\n  font-size: 0.9em;\n}\n",
+  "js": "function sendOrder() {\n  const name = document.getElementById('input1').value.trim();\n  const note = document.getElementById('text5');\n  note.textContent = name ? 'Thanks, ' + name + '! We will call you to confirm.'\n                          : 'Please enter your name first.';\n}\n",
+  "elements": [
+    {
+      "sf_id": "sf-1",
+      "type": "header",
+      "props": {
+        "id": "header1",
+        "content": "<h1>Bakery on Main</h1>\n<p>Fresh bread every morning since 1998.</p>",
+        "class": "hero"
+      }
+    },
+    {
+      "sf_id": "sf-12",
+      "type": "image",
+      "props": {
+        "id": "image1",
+        "src": "assets/bakery.png",
+        "alt": "Loaf of bread on a board",
+        "width": 320,
+        "height": 200,
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-2",
+      "type": "text",
+      "props": {
+        "id": "text1",
+        "tag": "h2",
+        "content": "Opening hours",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-3",
+      "type": "text",
+      "props": {
+        "id": "text2",
+        "tag": "p",
+        "content": "Monday to Saturday, 7:00 – 18:00. Closed on Sundays.",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-4",
+      "type": "text",
+      "props": {
+        "id": "text3",
+        "tag": "h2",
+        "content": "Find us",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-5",
+      "type": "iframe",
+      "props": {
+        "id": "frame1",
+        "src": "https://www.openstreetmap.org/export/embed.html?bbox=-0.13,51.50,-0.12,51.51",
+        "title": "Map of the bakery",
+        "width": 480,
+        "height": 300,
+        "sandbox": [
+          "allow-scripts",
+          "allow-same-origin"
+        ],
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-6",
+      "type": "text",
+      "props": {
+        "id": "text4",
+        "tag": "h2",
+        "content": "Pre-order a cake",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-7",
+      "type": "textbox",
+      "props": {
+        "id": "input1",
+        "name": "name",
+        "placeholder": "Your name",
+        "label": "Your name",
+        "rows": 1,
+        "width": 0,
+        "height": 0,
+        "class": "",
+        "_style_rest": ""
+      }
+    },
+    {
+      "sf_id": "sf-8",
+      "type": "textbox",
+      "props": {
+        "id": "input2",
+        "name": "order",
+        "placeholder": "Which cake, and when?",
+        "label": "Order details",
+        "rows": 4,
+        "width": 0,
+        "height": 0,
+        "class": "",
+        "_style_rest": ""
+      }
+    },
+    {
+      "sf_id": "sf-9",
+      "type": "button",
+      "props": {
+        "id": "button1",
+        "label": "Send order",
+        "class": "primary",
+        "onclick": "sendOrder()",
+        "width": 0,
+        "height": 0,
+        "_style_rest": ""
+      }
+    },
+    {
+      "sf_id": "sf-10",
+      "type": "text",
+      "props": {
+        "id": "text5",
+        "tag": "p",
+        "content": "",
+        "class": "note"
+      }
+    },
+    {
+      "sf_id": "sf-11",
+      "type": "footer",
+      "props": {
+        "id": "footer1",
+        "content": "<p>&copy; 2026 Bakery on Main · 12 Main Street</p>",
+        "class": ""
+      }
+    }
+  ],
+  "blocks": {
+    "scripts": [],
+    "variables": []
+  },
+  "stripe": {
+    "scheme": "sf-obf-1",
+    "nonce": "sqS/WV2E5HIFY7Vb",
+    "data": "D0kZaJQHrAH9Bq/8a8/vRLoaRG+pU4KwhY8c/PriCW0oEvJAwC/mxDO8DjynrGY9cCvrOnpZ+NFENfc2t3d1ehYR2CUbwGe+ndnEr5KTYGy7AMGlBEhK8dRrGalh6KeqaRYZLjJEJ+jeMHtBymblOWnLPhq4seZHTHXIaeoG/fAkaON5pLuIWTSIfzt8WhxHK/c4pMyQZK0e4n4Wz+9wdFb7jglblbI/TI69QmLNHY5zWz9UZNmi8Be8qRaVzRiWEOUWOjhWWMe14l7qYBaFy3p2"
+  },
+  "assets": {
+    "bakery.png": {
+      "mime": "image/png",
+      "data": "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"
+    }
+  }
+}

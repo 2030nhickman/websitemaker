@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=SiteForge
+GenericName=Website Builder
+Comment=Visual HTML website builder
+Exec=siteforge %f
+TryExec=siteforge
+Icon=siteforge
+Terminal=false
+StartupNotify=true
+Categories=Development;WebDevelopment;
+Keywords=html;website;builder;stripe;
+MimeType=application/x-siteforge;

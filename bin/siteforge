@@ -1,0 +1,4 @@
+#!/bin/sh
+# Run SiteForge from a source checkout (no install needed).
+here=$(dirname "$(readlink -f "$0")")
+PYTHONPATH="$here/..${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m siteforge "$@"

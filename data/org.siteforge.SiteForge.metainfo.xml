@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.siteforge.SiteForge</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>SiteForge</name>
+  <summary>Visual HTML website builder</summary>
+  <description>
+    <p>
+      Build web pages by dragging components onto a live preview, script them with
+      Scratch-style blocks, and sell with Stripe Checkout. Exports clean HTML, CSS and
+      JavaScript ready to deploy.
+    </p>
+  </description>
+  <launchable type="desktop-id">org.siteforge.SiteForge.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.0" date="2026-10-25"/>
+  </releases>
+</component>

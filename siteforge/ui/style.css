@@ -1,0 +1,51 @@
+/* SiteForge chrome. Colours come from libadwaita named colours so the
+   system accent colour and light/dark mode are respected. */
+
+.siteforge-sidebar {
+  background-color: @sidebar_bg_color;
+}
+
+.palette-card {
+  padding: 4px 2px;
+  border-radius: 8px;
+}
+
+.tab-strip {
+  padding: 4px 6px;
+}
+
+.preview-backdrop {
+  background-color: alpha(currentColor, 0.05);
+}
+
+.preview-device.framed {
+  margin: 16px;
+  border-radius: 12px;
+  outline: 1px solid alpha(currentColor, 0.15);
+}
+
+.code-pane-header {
+  padding: 2px 4px 2px 12px;
+  min-height: 34px;
+}
+
+.statusbar {
+  padding: 3px 12px;
+  border-top: 1px solid alpha(currentColor, 0.12);
+}
+
+.statusbar label {
+  opacity: 0.8;
+}
+
+.variables-panel {
+  padding: 12px;
+}
+
+.blocks-side {
+  background-color: @sidebar_bg_color;
+}
+
+.properties-panel {
+  background-color: @sidebar_bg_color;
+}

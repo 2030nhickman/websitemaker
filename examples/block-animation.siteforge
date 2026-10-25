@@ -1,0 +1,476 @@
+{
+  "format": "siteforge",
+  "version": 1,
+  "title": "Bouncing Ball",
+  "lang": "en",
+  "html": "<header data-sf-id=\"sf-1\" id=\"header1\"><h1>Bouncing ball</h1></header>\n<p data-sf-id=\"sf-2\" id=\"text1\">Built entirely with visual blocks. Press <kbd>space</kbd> to change colour.</p>\n<canvas data-sf-id=\"sf-3\" id=\"canvas1\" width=\"480\" height=\"270\"></canvas>\n<p data-sf-id=\"sf-4\" id=\"score\">Bounces: 0</p>\n<button type=\"button\" data-sf-id=\"sf-5\" id=\"start\">Start</button>\n<button type=\"button\" data-sf-id=\"sf-6\" id=\"stop\">Stop</button>\n",
+  "css": "body {\n  font-family: system-ui, sans-serif;\n  margin: 0 auto;\n  max-width: 560px;\n  padding: 24px;\n}\n\ncanvas {\n  display: block;\n  background: #1e1e2e;\n  border-radius: 12px;\n  max-width: 100%;\n}\n\nbutton {\n  padding: 8px 18px;\n  border-radius: 8px;\n  border: 0;\n  background: #3584e4;\n  color: white;\n  font: inherit;\n  cursor: pointer;\n}\n",
+  "js": "",
+  "elements": [
+    {
+      "sf_id": "sf-1",
+      "type": "header",
+      "props": {
+        "id": "header1",
+        "content": "<h1>Bouncing ball</h1>",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-2",
+      "type": "text",
+      "props": {
+        "id": "text1",
+        "tag": "p",
+        "content": "Built entirely with visual blocks. Press <kbd>space</kbd> to change colour.",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-3",
+      "type": "canvas",
+      "props": {
+        "id": "canvas1",
+        "width": 480,
+        "height": 270,
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-4",
+      "type": "text",
+      "props": {
+        "id": "score",
+        "tag": "p",
+        "content": "Bounces: 0",
+        "class": ""
+      }
+    },
+    {
+      "sf_id": "sf-5",
+      "type": "button",
+      "props": {
+        "id": "start",
+        "label": "Start",
+        "class": "",
+        "onclick": "",
+        "width": 0,
+        "height": 0,
+        "_style_rest": ""
+      }
+    },
+    {
+      "sf_id": "sf-6",
+      "type": "button",
+      "props": {
+        "id": "stop",
+        "label": "Stop",
+        "class": "",
+        "onclick": "",
+        "width": 0,
+        "height": 0,
+        "_style_rest": ""
+      }
+    }
+  ],
+  "blocks": {
+    "scripts": [
+      {
+        "type": "event_page_load",
+        "inputs": {},
+        "next": {
+          "type": "logic_forever",
+          "inputs": {},
+          "next": null,
+          "substacks": {
+            "body": {
+              "type": "logic_if",
+              "inputs": {
+                "cond": {
+                  "type": "logic_compare",
+                  "inputs": {
+                    "a": {
+                      "type": "var_get",
+                      "inputs": {
+                        "var": "running"
+                      },
+                      "next": null
+                    },
+                    "op": "=",
+                    "b": 1
+                  },
+                  "next": null
+                }
+              },
+              "next": null,
+              "substacks": {
+                "then": {
+                  "type": "looks_clear_canvas",
+                  "inputs": {
+                    "el": "canvas1"
+                  },
+                  "next": {
+                    "type": "looks_draw_circle",
+                    "inputs": {
+                      "el": "canvas1",
+                      "x": {
+                        "type": "var_get",
+                        "inputs": {
+                          "var": "x"
+                        },
+                        "next": null
+                      },
+                      "y": {
+                        "type": "var_get",
+                        "inputs": {
+                          "var": "y"
+                        },
+                        "next": null
+                      },
+                      "r": 20,
+                      "color": {
+                        "type": "var_get",
+                        "inputs": {
+                          "var": "color"
+                        },
+                        "next": null
+                      }
+                    },
+                    "next": {
+                      "type": "var_change",
+                      "inputs": {
+                        "var": "x",
+                        "value": {
+                          "type": "var_get",
+                          "inputs": {
+                            "var": "dx"
+                          },
+                          "next": null
+                        }
+                      },
+                      "next": {
+                        "type": "var_change",
+                        "inputs": {
+                          "var": "y",
+                          "value": {
+                            "type": "var_get",
+                            "inputs": {
+                              "var": "dy"
+                            },
+                            "next": null
+                          }
+                        },
+                        "next": {
+                          "type": "logic_if",
+                          "inputs": {
+                            "cond": {
+                              "type": "logic_or",
+                              "inputs": {
+                                "a": {
+                                  "type": "logic_compare",
+                                  "inputs": {
+                                    "a": {
+                                      "type": "var_get",
+                                      "inputs": {
+                                        "var": "x"
+                                      },
+                                      "next": null
+                                    },
+                                    "op": ">",
+                                    "b": 460
+                                  },
+                                  "next": null
+                                },
+                                "b": {
+                                  "type": "logic_compare",
+                                  "inputs": {
+                                    "a": {
+                                      "type": "var_get",
+                                      "inputs": {
+                                        "var": "x"
+                                      },
+                                      "next": null
+                                    },
+                                    "op": "<",
+                                    "b": 20
+                                  },
+                                  "next": null
+                                }
+                              },
+                              "next": null
+                            }
+                          },
+                          "next": {
+                            "type": "logic_if",
+                            "inputs": {
+                              "cond": {
+                                "type": "logic_or",
+                                "inputs": {
+                                  "a": {
+                                    "type": "logic_compare",
+                                    "inputs": {
+                                      "a": {
+                                        "type": "var_get",
+                                        "inputs": {
+                                          "var": "y"
+                                        },
+                                        "next": null
+                                      },
+                                      "op": ">",
+                                      "b": 250
+                                    },
+                                    "next": null
+                                  },
+                                  "b": {
+                                    "type": "logic_compare",
+                                    "inputs": {
+                                      "a": {
+                                        "type": "var_get",
+                                        "inputs": {
+                                          "var": "y"
+                                        },
+                                        "next": null
+                                      },
+                                      "op": "<",
+                                      "b": 20
+                                    },
+                                    "next": null
+                                  }
+                                },
+                                "next": null
+                              }
+                            },
+                            "next": null,
+                            "substacks": {
+                              "then": {
+                                "type": "var_set",
+                                "inputs": {
+                                  "var": "dy",
+                                  "value": {
+                                    "type": "op_math",
+                                    "inputs": {
+                                      "a": 0,
+                                      "op": "−",
+                                      "b": {
+                                        "type": "var_get",
+                                        "inputs": {
+                                          "var": "dy"
+                                        },
+                                        "next": null
+                                      }
+                                    },
+                                    "next": null
+                                  }
+                                },
+                                "next": {
+                                  "type": "var_change",
+                                  "inputs": {
+                                    "var": "bounces",
+                                    "value": 1
+                                  },
+                                  "next": {
+                                    "type": "looks_set_text",
+                                    "inputs": {
+                                      "el": "score",
+                                      "text": {
+                                        "type": "op_join",
+                                        "inputs": {
+                                          "a": "Bounces: ",
+                                          "b": {
+                                            "type": "var_get",
+                                            "inputs": {
+                                              "var": "bounces"
+                                            },
+                                            "next": null
+                                          }
+                                        },
+                                        "next": null
+                                      }
+                                    },
+                                    "next": null
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "substacks": {
+                            "then": {
+                              "type": "var_set",
+                              "inputs": {
+                                "var": "dx",
+                                "value": {
+                                  "type": "op_math",
+                                  "inputs": {
+                                    "a": 0,
+                                    "op": "−",
+                                    "b": {
+                                      "type": "var_get",
+                                      "inputs": {
+                                        "var": "dx"
+                                      },
+                                      "next": null
+                                    }
+                                  },
+                                  "next": null
+                                }
+                              },
+                              "next": {
+                                "type": "var_change",
+                                "inputs": {
+                                  "var": "bounces",
+                                  "value": 1
+                                },
+                                "next": {
+                                  "type": "looks_set_text",
+                                  "inputs": {
+                                    "el": "score",
+                                    "text": {
+                                      "type": "op_join",
+                                      "inputs": {
+                                        "a": "Bounces: ",
+                                        "b": {
+                                          "type": "var_get",
+                                          "inputs": {
+                                            "var": "bounces"
+                                          },
+                                          "next": null
+                                        }
+                                      },
+                                      "next": null
+                                    }
+                                  },
+                                  "next": null
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x": 20,
+        "y": 20
+      },
+      {
+        "type": "event_click",
+        "inputs": {
+          "el": "start"
+        },
+        "next": {
+          "type": "var_set",
+          "inputs": {
+            "var": "running",
+            "value": 1
+          },
+          "next": null
+        },
+        "x": 560,
+        "y": 20
+      },
+      {
+        "type": "event_click",
+        "inputs": {
+          "el": "stop"
+        },
+        "next": {
+          "type": "var_set",
+          "inputs": {
+            "var": "running",
+            "value": 0
+          },
+          "next": null
+        },
+        "x": 560,
+        "y": 150
+      },
+      {
+        "type": "event_key",
+        "inputs": {
+          "key": "space"
+        },
+        "next": {
+          "type": "logic_if_else",
+          "inputs": {
+            "cond": {
+              "type": "logic_compare",
+              "inputs": {
+                "a": {
+                  "type": "var_get",
+                  "inputs": {
+                    "var": "color"
+                  },
+                  "next": null
+                },
+                "op": "=",
+                "b": "#f6d32d"
+              },
+              "next": null
+            }
+          },
+          "next": null,
+          "substacks": {
+            "then": {
+              "type": "var_set",
+              "inputs": {
+                "var": "color",
+                "value": "#ff7800"
+              },
+              "next": null
+            },
+            "else": {
+              "type": "var_set",
+              "inputs": {
+                "var": "color",
+                "value": "#f6d32d"
+              },
+              "next": null
+            }
+          }
+        },
+        "x": 560,
+        "y": 280
+      }
+    ],
+    "variables": [
+      {
+        "name": "x",
+        "initial": 60
+      },
+      {
+        "name": "y",
+        "initial": 60
+      },
+      {
+        "name": "dx",
+        "initial": 4
+      },
+      {
+        "name": "dy",
+        "initial": 3
+      },
+      {
+        "name": "running",
+        "initial": 1
+      },
+      {
+        "name": "bounces",
+        "initial": 0
+      },
+      {
+        "name": "color",
+        "initial": "#f6d32d"
+      }
+    ]
+  },
+  "stripe": {
+    "scheme": "sf-obf-1",
+    "nonce": "VoDtC8JeTnSfgbmy",
+    "data": "nLGUy0En260sjO/DGrq1kewBWsOxcPIfxDtR61Xiv6nFAmoND5lPzSGSjPbhNxFZ/usPaauhegmsLggIgSydeAm6MS1rck+N36hzaF2V08mC6Fvty1100W+WkJ89fLtIvMZWnve/t11hRrckHBvEM4d94DzzQMMs7q2g/17vEUASyX8pwSqdvMqgL2zynLI74QtwUye9tD8eK8oqZkv1zsyiQS+YHfJEMVBPA83u7bxMDeBOkTwphkhXBHf3NXSYFcuoZrRRurLZDvIHOFWrqRm3"
+  },
+  "assets": {}
+}
