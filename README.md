@@ -48,10 +48,34 @@ network calls of its own.
 
 ## Install
 
-### From the .deb (Debian 13)
+### Quick install (downloads everything it needs)
 
 ```sh
-./build.sh                          # produces siteforge_1.0.0_amd64.deb
+curl -fsSL https://raw.githubusercontent.com/2030nhickman/websitemaker/main/install.sh | bash
+# or, from a checkout:
+./install.sh            # --force to reinstall, --remove to uninstall
+```
+
+`install.sh` works like this:
+
+- It uses `dist/siteforge_1.0.0_amd64.deb` if it's already next to the
+  script, in the current folder or in `~/.cache/siteforge`. Otherwise it
+  downloads the package from GitHub and checks it against the published
+  SHA-256 checksum.
+- It installs only the dependencies that are missing, using apt.
+- Then it installs SiteForge, and skips everything if this version is
+  already installed.
+
+It uses `sudo` when it needs to. Set `SITEFORGE_REF=<branch>` to download
+from a branch other than `main`.
+
+### From the .deb (Debian 13)
+
+The prebuilt package is committed at `dist/siteforge_1.0.0_amd64.deb`.
+To rebuild it yourself:
+
+```sh
+./build.sh                          # produces siteforge_1.0.0_amd64.deb (copy it to dist/ to publish)
 sudo apt install ./siteforge_1.0.0_amd64.deb
 # or: sudo dpkg -i siteforge_*.deb && sudo apt -f install
 ```
