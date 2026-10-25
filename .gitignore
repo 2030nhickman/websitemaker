@@ -1,6 +1,9 @@
 __pycache__/
 *.pyc
 build/
-dist/
+
 *.deb
 *.tmp
+
+# The released package is committed on purpose (install.sh downloads it).
+!dist/*.deb
